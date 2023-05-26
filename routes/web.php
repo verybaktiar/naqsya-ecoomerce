@@ -87,5 +87,5 @@ Route::get('tentang', function () {
 });
 Route::get('kontak', function () {
     // me-return view
-    return view('kontak');
+    return view('user.kontak');
 });

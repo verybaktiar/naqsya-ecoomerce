@@ -25,6 +25,17 @@
         <script src="{{ asset('themes/ezone/assets/js/vendor/modernizr-2.8.3.min.js') }}"></script>
 
         <!-- CSRF Token -->
+        {{-- GALERY FASHION --}}
+        <link rel="apple-touch-icon" href="{{ asset ('user/assets/img/apple-icon.png') }}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset ('user/assets/img/favicon.ico') }}">
+
+        <link rel="stylesheet" href="{{ asset ('user/assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset ('user/assets/css/templatemo.css') }}">
+        <link rel="stylesheet" href="{{ asset ('user/assets/css/custom.css') }}">
+
+        <!-- Load fonts style after rendering the layout styles -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+        <link rel="stylesheet" href="{{ asset ('user/assets/css/fontawesome.min.css') }}">
 		<meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body>
@@ -33,178 +44,17 @@
         <![endif]-->
         <!-- header -->
 
-        <header>
-            <div class="header-top-furniture wrapper-padding-2 res-header-sm">
-                <div class="container-fluid">
-                    <div class="header-bottom-wrapper">
-                        <div class="logo-2 furniture-logo ptb-30">
-                            <a href="/">
-                                <img src="{{ asset('themes/ezone/assets/img/logo/gff.jpg') }}" alt="">
-                            </a>
-                        </div>
-                        <div class="menu-style-2 furniture-menu menu-hover">
-                            <nav>
-                                <ul>
-                                    <li><a href="/">home</a>
-                                    </li>
-                                    <li><a href="#">pages</a>
-                                    </li>
-                                    <li><a href="{{ url('products') }}">shop</a>
-
-                                    </li>
-                                    <li><a href="blog.html">blog</a>
-                                    </li>
-                                    <li><a href="contact.html">contact</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="header-cart">
-                            <a class="icon-cart-furniture" href="{{ url('carts') }}">
-                                <i class="ti-shopping-cart"></i>
-                                <span class="shop-count-furniture green">{{ Cart::count() }}</span>
-                            </a>
-                            <!-- @if (Cart::count() > 0)
-                                <ul class="cart-dropdown">
-                                    @foreach (Cart::content() as $item)
-                                        @php
-                                            $product = isset($item->model->parent) ? $item->model->parent : $item->model;
-                                            $image = !empty($product->productImages->first()) ? asset('storage/'.$product->productImages->first()->path) : asset('themes/ezone/assets/img/cart/3.jpg')
-                                        @endphp
-                                        <li class="single-product-cart">
-                                            <div class="cart-img">
-                                                <a href="{{ url('product/'. $product->slug) }}"><img src="{{ $image }}" alt="{{ $product->name }}" style="width:100px"></a>
-                                            </div>
-                                            <div class="cart-title">
-                                                <h5><a href="{{ url('product/'. $product->slug) }}">{{ $item->name }}</a></h5>
-                                                <span>{{ number_format($item->price) }} x {{ $item->quantity }}</span>
-                                            </div>
-                                            <div class="cart-delete">
-                                                <a href="{{ url('carts/remove/'. $item->id)}}" class="delete"><i class="ti-trash"></i></a>
-                                            </div>
-                                        </li>
-                                    @endforeach
-                                    <li class="cart-space">
-                                        <div class="cart-sub">
-                                            <h4>Subtotal</h4>
-                                        </div>
-                                        <div class="cart-price">
-                                            <h4>{{ Cart::subtotal() }}</h4>
-                                        </div>
-                                    </li>
-                                    <li class="cart-btn-wrapper">
-                                        <a class="cart-btn btn-hover" href="{{ url('carts') }}">view cart</a>
-                                        <a class="cart-btn btn-hover" href="{{ url('orders/checkout') }}">checkout</a>
-                                    </li>
-                                </ul>
-                            @endif -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="mobile-menu-area d-md-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
-                            <div class="mobile-menu">
-                                <nav id="mobile-menu-active">
-                                    <ul class="menu-overflow">
-                                        <li><a href="/">HOME</a>
-
-                                        </li>
-                                        <li><a href="#">pages</a>
-
-                                        </li>
-                                        <li><a href="{{ url('products') }}">shop</a>
-
-                                        </li>
-                                        <li><a href="#">BLOG</a>
-
-                                        </li>
-                                        <li><a href="contact.html"> Contact  </a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="header-bottom-furniture wrapper-padding-2 border-top-3">
-                <div class="container-fluid">
-                    <div class="furniture-bottom-wrapper">
-                        <div class="furniture-login">
-                            <ul>
-                                @guest
-                                    <li>Get Access: <a href="{{ url('login') }}">Login</a></li>
-                                    <li><a href="{{ url('register') }}">Register</a></li>
-                                @else
-                                    <li>Hello: <a href="{{ url('profile') }}">{{ Auth::user()->first_name }}</a></li>
-                                    <a href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                @endguest
-                            </ul>
-                        </div>
-                        <div class="furniture-search">
-                        <form action="{{ url('products') }}" method="GET">
-                            <input placeholder="I am Searching for . . ." type="text" name="q" value="{{ isset($q) ? $q : null }}">
-                            <button>
-                                <i class="ti-search"></i>
-                            </button>
-                        </form>
-                        </div>
-                        <div class="furniture-wishlist">
-                            <ul>
-                                <li><a href="{{ url('wishlists') }}"><i class="ti-heart"></i> Favorites</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+       @include('layouts.header')
         <!-- end -->
 
         @yield('content')
 
         <!-- services -->
-        <div class="services-area wrapper-padding-4 gray-bg pt-120 pb-80">
-            <div class="container-fluid">
-                <div class="services-wrapper">
-                    <div class="single-services mb-40">
-                        <div class="services-img">
-                            <img src="{{ asset('themes/ezone/assets/img/icon-img/26.png') }}" alt="">
-                        </div>
-                        <div class="services-content">
-                            <h4>Bebas Biaya Pengiriman</h4>
-                            <p>"Kami memberikan kemudahan dan kenyamanan bagi Anda dengan menawarkan layanan bebas pengiriman."</p>
-                        </div>
-                    </div>
-                    <div class="single-services mb-40">
-                        <div class="services-img">
-                            <img src="{{ asset('themes/ezone/assets/img/icon-img/27.png') }}" alt="">
-                        </div>
-                        <div class="services-content">
-                            <h4>Layanan pelanggan tersedia 24 jam sehari</h4>
-                            <p>"Dukungan pelanggan kami selalu siap sedia 24 jam sehari, 7 hari seminggu" </p>
-                        </div>
-                    </div>
-                    <div class="single-services mb-40">
-                        <div class="services-img">
-                            <img src="{{ asset('themes/ezone/assets/img/icon-img/28.png') }}" alt="">
-                        </div>
-                        <div class="services-content">
-                            <h4>Pembayaran Aman</h4>
-                            <p>"Bayar dengan aman dan terlindungi dengan pembayaran yang secure, <br>Memberikan ketenangan dan kepercayaan untuk transaksi online Anda."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <!-- end -->
 
         <!-- footer -->
-        <footer class="footer-area">
+        {{-- <footer class="footer-area">
             <div class="footer-top-area pt-70 pb-35 wrapper-padding-5">
                 <div class="container-fluid">
                     <div class="widget-wrapper">
@@ -273,7 +123,9 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> --}}
+        @include('layouts.footer')
+
         <!-- end -->
         <div id="loader" style="display: none;">
             <div id="loading" style="z-index:99999;position: fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.3);display: flex;justify-content:center;align-items: center;" class="mx-auto">
@@ -442,6 +294,13 @@
         <script src="{{ asset('themes/ezone/assets/js/main.js') }}"></script>
         <script src="{{ asset('themes/ezone/assets/js/app.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        {{-- GALERY FASHION --}}
+        <script src="{{ asset ('user/assets/js/jquery-1.11.0.min.js') }}"></script>
+        <script src="{{ asset ('user/assets/js/jquery-migrate-1.2.1.min.js') }}"></script>
+        <script src="{{ asset ('user/assets/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset ('user/assets/js/templatemo.js') }}"></script>
+        <script src="{{ asset ('user/assets/js/custom.js') }}"></script>
         <script>
             $(".delete").on("click", function () {
                 return confirm("Do you want to remove this?");

@@ -55,8 +55,8 @@ class ProductController extends Controller
         $selectedSort = $this->selectedSort;
         $products = $products->paginate(10);
 
-        // return view('frontend.products.index', compact('products','colors','sizes','minPrice','maxPrice','categories', 'sorts','selectedSort'));
-        return view('user.shop', compact('products','colors','sizes','minPrice','maxPrice','categories', 'sorts','selectedSort'));
+        return view('frontend.products.index', compact('products','colors','sizes','minPrice','maxPrice','categories', 'sorts','selectedSort'));
+        // return view('user.shop', compact('products','colors','sizes','minPrice','maxPrice','categories', 'sorts','selectedSort'));
     }
 
     private function _filterProductsByPriceRange($products, $request)

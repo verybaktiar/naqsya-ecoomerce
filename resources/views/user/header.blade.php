@@ -22,7 +22,7 @@
                         <a class="nav-link" href="shop">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact">Kontak</a>
+                        <a class="nav-link" href="kontak">Kontak</a>
                     </li>
                 </ul>
             </div>

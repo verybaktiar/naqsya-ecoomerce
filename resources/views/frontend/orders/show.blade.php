@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('content')
-	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
+	{{-- <div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
 		<div class="container-fluid">
 			<div class="breadcrumb-content text-center">
 				<h2>My Order</h2>
@@ -11,7 +11,7 @@
 				</ul>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<div class="shop-page-wrapper shop-page-padding ptb-100">
 		<div class="container-fluid">
 			<div class="row">
@@ -74,7 +74,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								@php 
+								@php
 									function showAttributes($jsonAttributes)
 									{
 										$jsonAttr = (string) $jsonAttributes;

@@ -1,31 +1,24 @@
 @extends('frontend.layout')
 
 @section('content')
-	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
-		<div class="container-fluid">
-			<div class="breadcrumb-content text-center">
-				<h2>Register</h2>
-				<ul>
-					<li><a href="#">home</a></li>
-					<li>register</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+
 	<!-- register-area start -->
 	<div class="register-area ptb-100">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12 col-12 col-lg-12 col-xl-6 ml-auto mr-auto">
 					<div class="login">
+                        <div class="text-center">
+                            <img src="{{ url('img/logo.png') }}" width="50" class="mb-3" />
+                            <h3 class="">Sign Up</h3>
+                        </div>
 						<div class="login-form-container">
 							<div class="login-form">
 								<form method="POST" action="{{ route('register') }}">
 									@csrf
-
 									<div class="form-group row">
 										<div class="col-md-12">
-											<input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus placeholder="First name">
+											<input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus placeholder="Nama Depan">
 											@error('first_name')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
@@ -33,10 +26,9 @@
 											@enderror
 										</div>
 									</div>
-
 									<div class="form-group row">
 										<div class="col-md-12">
-											<input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus placeholder="Last name">
+											<input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus placeholder="Nama Belakang">
 											@error('last_name')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
@@ -56,6 +48,15 @@
 											@enderror
 										</div>
 									</div>
+
+                                    <div class="form-group row">
+										<div class="col-md-12">
+											<input id="number" type="email" class="form-control" required autocomplete="nomortelepon" placeholder="Nomor Telepon">
+
+
+										</div>
+									</div>
+
 
 									<div class="form-group row">
 										<div class="col-md-12">

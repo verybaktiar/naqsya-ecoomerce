@@ -11,7 +11,7 @@
                 <li class="pb-3">
                     @if ($categories)
                         <div class="sidebar-widget mb-45">
-                 
+
                             <div class="sidebar-categories">
                                 <ul>
                                     @foreach ($categories as $category)
@@ -109,7 +109,7 @@
                                                 <img src="{{ asset('themes/ezone/assets/img/product/fashion-colorful/1.jpg') }}" alt="{{ $product->name }}">
                                             @endif
                                         </a>
-                                        <span>hot</span>
+
                                         <div class="product-action">
                                             <a class="animate-left add-to-fav" title="Favorite"  product-slug="{{ $product->slug }}" href="">
                                                 <i class="pe-7s-like"></i>

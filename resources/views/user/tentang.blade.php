@@ -1,4 +1,4 @@
-@extends('user.app')
+@extends('frontend.layout')
     <!-- Close Header -->
 @section('content')
     <section class="bg-success py-5">

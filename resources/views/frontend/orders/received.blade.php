@@ -2,7 +2,7 @@
 
 @section('content')
 	<!-- header end -->
-	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
+	{{-- <div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
 		<div class="container">
 			<div class="breadcrumb-content text-center">
 				<h2>Order Received</h2>
@@ -12,7 +12,7 @@
 				</ul>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!-- checkout-area start -->
 	<div class="cart-main-area  ptb-100">
 		<div class="container">
@@ -26,7 +26,7 @@
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                            </div> 
+                            </div>
                         </div><!-- /.container-fluid -->
                     </div>
                 @endif
@@ -79,7 +79,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								@php 
+								@php
 									function showAttributes($jsonAttributes)
 									{
 										$jsonAttr = (string) $jsonAttributes;

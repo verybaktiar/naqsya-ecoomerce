@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('content')
-	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
+	{{-- <div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
 		<div class="container-fluid">
 			<div class="breadcrumb-content text-center">
 				<h2>Wishlist Saya</h2>
@@ -11,7 +11,7 @@
 				</ul>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<div class="shop-page-wrapper shop-page-padding ptb-100">
 		<div class="container-fluid">
 			<div class="row">
@@ -27,7 +27,7 @@
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                            </div> 
+                            </div>
                         </div><!-- /.container-fluid -->
                     </div>
                 @endif
@@ -52,7 +52,7 @@
 										<tr>
 											<td class="product-remove">
                                             <form action="{{ route('wishlists.destroy', $wishlist->id) }}" method="post" class="delete d-inline-block">
-                                                @csrf 
+                                                @csrf
                                                 @method('delete')
                                                 <button type="submit" style="background-color: transparent; border-color: #FFF;">X</button>
                                             </form>

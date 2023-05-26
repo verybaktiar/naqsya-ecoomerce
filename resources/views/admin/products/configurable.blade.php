@@ -33,6 +33,12 @@
                 <input type="number" class="form-control" name="variants[{{ $variant->id }}][weight]" value="{{ old('weight', $variant->weight) }}" id="weight">
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="form-group border-bottom pb-4">
+                <label for="name" class="form-label">Size</label>
+                <input type="text" class="form-control" name="variants[{{ $variant->id }}][size]" value="{{ old('size', $variant->size) }}" id="size">
+            </div>
+        </div>
     </div>
 @endforeach
 <hr/>
