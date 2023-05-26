@@ -1,17 +1,7 @@
 @extends('frontend.layout')
 
 @section('content')
-	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
-		<div class="container-fluid">
-			<div class="breadcrumb-content text-center">
-				<h2>Register</h2>
-				<ul>
-					<li><a href="#">home</a></li>
-					<li>register</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+	
 	<div class="shop-page-wrapper shop-page-padding ptb-100">
 		<div class="container-fluid">
 			<div class="row">
@@ -27,7 +17,7 @@
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                                </div> 
+                                </div>
                             </div><!-- /.container-fluid -->
                         </div>
                     @endif
@@ -40,7 +30,7 @@
 									<div class="form-group row">
 										<div class="col-md-6">
                                             <div class="checkout-form-list">
-                                                <label>Nama Pertama <span class="required">*</span></label>										
+                                                <label>Nama Awal <span class="required">*</span></label>
                                                 <input type="text" name="first_name" value="{{ old('first_name', auth()->user()->first_name) }}">
                                             </div>
 											@error('first_name')
@@ -51,7 +41,7 @@
 										</div>
 										<div class="col-md-6">
                                             <div class="checkout-form-list">
-                                                <label>Nama Akhir <span class="required">*</span></label>										
+                                                <label>Nama Akhir <span class="required">*</span></label>
                                                 <input type="text" name="last_name" value="{{ old('last_name', auth()->user()->last_name) }}">
                                             </div>
                                             @error('last_name')
@@ -65,7 +55,7 @@
 									<div class="form-group row">
 										<div class="col-md-12">
                                             <div class="checkout-form-list">
-                                                <label>Address <span class="required">*</span></label>
+                                                <label>Alamat <span class="required">*</span></label>
                                                 <input type="text" name="address1" value="{{ old('address1') }}">
                                             </div>
                                             @error('address1')
@@ -121,7 +111,7 @@
 									<div class="form-group row">
 										<div class="col-md-6">
                                             <div class="checkout-form-list">
-                                                <label>Postcode / Zip <span class="required">*</span></label>										
+                                                <label>Kode Pos <span class="required">*</span></label>
                                                 <input type="text" name="postcode" value="{{ old('postcode', auth()->user()->postcode) }}">
                                             </div>
                                             @error('postcode')
@@ -132,7 +122,7 @@
 										</div>
 										<div class="col-md-6">
                                             <div class="checkout-form-list">
-                                                <label>Phone  <span class="required">*</span></label>										
+                                                <label>Nomor Telepon  <span class="required">*</span></label>
                                                 <input type="text" name="phone" value="{{ old('phone', auth()->user()->phone) }}">
                                             </div>
 											@error('phone')
@@ -154,7 +144,7 @@
 										</div>
 									</div>
 									<div class="button-box">
-										<button type="submit" class="default-btn floatright">Update Profile</button>
+										<button type="submit" class="default-btn floatright">Perbarui Profile</button>
 									</div>
 								</form>
 							</div>

@@ -2,7 +2,7 @@
 
 @section('content')
 	<!-- header end -->
-	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
+	{{-- <div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
 		<div class="container">
 			<div class="breadcrumb-content text-center">
 				<h2>Checkout Page</h2>
@@ -12,32 +12,32 @@
 				</ul>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!-- checkout-area start -->
 	<div class="checkout-area ptb-100">
 		<div class="container">
             <form action="{{ route('orders.checkout') }}" method="post">
-				@csrf 
+				@csrf
 			<div class="row">
 				<div class="col-lg-6 col-md-12 col-12">
-					<div class="checkbox-form">						
-						<h3>Billing Details</h3>
+					<div class="checkbox-form">
+						<h3>Detail Tagihan</h3>
 						<div class="row">
 							<div class="col-6">
 								<div class="checkout-form-list">
-									<label>Nama Pertama <span class="required">*</span></label>										
+									<label>Nama Depan <span class="required">*</span></label>
 									<input type="text" name="first_name" value="{{ old('first_name', auth()->user()->first_name) }}">
 								</div>
 							</div>
 							<div class="col-6">
 								<div class="checkout-form-list">
-									<label>Nama Akhir <span class="required">*</span></label>										
+									<label>Nama Belakang <span class="required">*</span></label>
 									<input type="text" name="last_name" value="{{ old('last_name', auth()->user()->last_name) }}">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="checkout-form-list">
-									<label>Address <span class="required">*</span></label>
+									<label>Alamat <span class="required">*</span></label>
 									<input type="text" name="address1" value="{{ old('address1', auth()->user()->address1) }}">
 								</div>
 							</div>
@@ -59,40 +59,40 @@
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>City<span class="required">*</span></label>	
+									<label>Kota<span class="required">*</span></label>
 									<select name="shipping_city_id" id="shipping-city">
 										<option value="">-- Pilih Kota --</option>
 										@if($cities)
 											@foreach($cities as $id => $city)
 												<option value="{{ $id }}">{{ $city }}</option>
-											@endforeach	
+											@endforeach
 										@endif
 									</select>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Postcode / Zip <span class="required">*</span></label>										
+									<label>Kode Pos<span class="required">*</span></label>
 									<input type="text" name="postcode" value="{{ old('postcode', auth()->user()->postcode) }}">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Phone  <span class="required">*</span></label>										
+									<label>Nomor Telepon  <span class="required">*</span></label>
 									<input type="text" name="phone" value="{{ old('phone', auth()->user()->phone) }}">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Email Address </label>										
+									<label>Alamat Email</label>
 									<input type="text" name="email" value="{{ old('email', auth()->user()->email) }}">
 								</div>
-							</div>							
+							</div>
 						</div>
 						<div class="different-address">
 							<div class="ship-different-title">
 								<h3>
-									<label>Ship to a different address?</label>
+									<label>Alamat Tambahan?</label>
 									<input id="ship-box" type="checkbox" name="ship_to"/>
 								</h3>
 							</div>
@@ -100,19 +100,19 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>Nama Pertama <span class="required">*</span></label>										
+											<label>Nama Depan <span class="required">*</span></label>
 											<input type="text" name="customer_first_name" value="{{ old('customer_first_name') }}">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>Nama Akhir <span class="required">*</span></label>										
+											<label>Nama Belakang <span class="required">*</span></label>
 											<input type="text" name="customer_last_name" value="{{ old('customer_last_name') }}">
 										</div>
 									</div>
 									<div class="col-md-12">
 										<div class="checkout-form-list">
-											<label>Address <span class="required">*</span></label>
+											<label>Alamat <span class="required">*</span></label>
 											<input type="text" name="customer_address1" value="{{ old('address1') }}">
 										</div>
 									</div>
@@ -123,7 +123,7 @@
 									</div>
 									<div class="col-md-12">
 										<div class="checkout-form-list">
-											<label>Province<span class="required">*</span></label>
+											<label>Provinsi<span class="required">*</span></label>
 											<select name="customer_province_id" id="">
 												<option value="ntm">Ntb</option>
 												<option value="jaksel">Jakarta Selatan</option>
@@ -141,43 +141,43 @@
 									</div>
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>Postcode / Zip <span class="required">*</span></label>										
+											<label>Kode Pos <span class="required">*</span></label>
 											<input type="text" name="customer_postcode" value="{{ old('postcode') }}">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>Phone<span class="required">*</span></label>										
+											<label>Nomor Telepon<span class="required">*</span></label>
 											<input type="text" name="customer_phone" value="{{ old('customer_phone') }}">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>Email </label>										
+											<label>Email </label>
 											<input type="text" name="customer_email" value="{{ old('customer_email') }}">
 										</div>
-									</div>	
-								</div>					
+									</div>
+								</div>
 							</div>
 							<div class="order-notes">
 								<div class="checkout-form-list mrg-nn">
-									<label>Order Notes</label>
+									<label>Catatan</label>
 									<input type="text" name="note" value="{{ old('note') }}">
-								</div>									
+								</div>
 							</div>
-						</div>													
+						</div>
 					</div>
-				</div>	
+				</div>
 				<div class="col-lg-6 col-md-12 col-12">
 					<div class="your-order">
-						<h3>Your order</h3>
+						<h3>Pesanan</h3>
 						<div class="your-order-table table-responsive">
 							<table>
 								<thead>
 									<tr>
-										<th class="product-name">Product</th>
+										<th class="product-name">Produk</th>
 										<th class="product-total">Total</th>
-									</tr>							
+									</tr>
 								</thead>
 								<tbody>
 									@forelse ($items as $item)
@@ -195,7 +195,7 @@
 										</tr>
 									@empty
 										<tr>
-											<td colspan="2">The cart is empty! </td>
+											<td colspan="2">Produk Belum Dipilih </td>
 										</tr>
 									@endforelse
 								</tbody>
@@ -209,16 +209,16 @@
 										<td><span class="amount">jnfjk</span></td>
 									</tr> -->
 									<tr class="cart-subtotal">
-										<th>Shipping Cost (100 kg)</th>
+										<th>Biaya Pengiriman (100 kg)</th>
 										<td><select id="shipping-cost-option" required name="shipping_service">
-											
+
 										</select></td>
 									</tr>
 									<tr class="order-total">
-										<th>Order Total</th>
+										<th>Total Pesanan</th>
 										<td><strong>Rp<span class="total-amount">{{ Cart::subtotal(0, ",", ".") }}</span></strong>
 										</td>
-									</tr>								
+									</tr>
 								</tfoot>
 							</table>
 						</div>
@@ -231,7 +231,7 @@
 										</div>
 										<div id="payment-1" class="panel-collapse collapse show">
 											<div class="panel-body">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+												<p>Lakukan pembayaran langsung ke rekening bank kami. Harap gunakan ID Pesanan Anda sebagai referensi pembayaran. Pesanan Anda tidak akan dikirim sampai dana telah dicairkan di rekening kami.</p>
 											</div>
 										</div>
 									</div>
@@ -241,7 +241,7 @@
 										</div>
 										<div id="payment-2" class="panel-collapse collapse">
 											<div class="panel-body">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+												<p>Lakukan pembayaran langsung ke rekening bank kami. Harap gunakan ID Pesanan Anda sebagai referensi pembayaran. Pesanan Anda tidak akan dikirim sampai dana telah dicairkan di rekening kami.</p>
 											</div>
 										</div>
 									</div>
@@ -251,14 +251,14 @@
 										</div>
 										<div id="payment-3" class="panel-collapse collapse">
 											<div class="panel-body">
-												<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+												<p>Lakukan pembayaran langsung ke rekening bank kami. Harap gunakan ID Pesanan Anda sebagai referensi pembayaran. Pesanan Anda tidak akan dikirim sampai dana telah dicairkan di rekening kami.</p>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="order-button-payment">
 									<input type="submit" value="Place order" />
-								</div>								
+								</div>
 							</div>
 						</div>
 					</div>

@@ -1,17 +1,7 @@
 @extends('frontend.layout')
 
 @section('content')
-	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
-		<div class="container-fluid">
-			<div class="breadcrumb-content text-center">
-				<h2>shop grid 3 column</h2>
-				<ul>
-					<li><a href="#">home</a></li>
-					<li>shop grid 3 column</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+	
 	<div class="shop-page-wrapper shop-page-padding ptb-100">
 		<div class="container-fluid">
 			<div class="row">
